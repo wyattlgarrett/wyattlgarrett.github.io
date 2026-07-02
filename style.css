@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* FIXED BACKGROUND IMAGE */
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    /* Added higher contrast blues and teals so the movement is obvious */
+    background: linear-gradient(-45deg, #050b14, #1a365d, #0d1b2a, #2a5270);
+    background-size: 400% 400%;
+    /* Sped up from 15s to 8s so you can immediately see the effect */
+    animation: gradientBG 12s ease infinite; 
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background-color: rgba(10, 10, 10, 1); /* opaque at top */
+
+    z-index: 1000;
+
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.75); /* slightly transparent */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* HERO (now just layout, not background image) */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    
+    /* Apply the image ONLY to the hero section */
+    background-image: url("assets/images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a parallax scroll effect */
+}
+
+/* Dark overlay just for the hero image so your name is readable */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* SECTIONS */
+
+/* Layout for the scrolling sections */
+.section {
+    min-height: 80vh; /* Ensures sections take up a good amount of screen */
+    padding: 100px 10%; /* Gives breathing room around the edges */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Make section headers pop */
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* The Frosted Glass Card Effect */
+.card {
+    background: rgba(15, 15, 15, 0.55); /* Dark, semi-transparent background */
+    backdrop-filter: blur(12px); /* This blurs the hero image behind it */
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Very subtle white border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); /* Soft drop shadow */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Small animation when a user hovers over a project */
+.card:hover {
+    transform: translateY(-5px); /* Floats up slightly */
+    border-color: rgba(255, 255, 255, 0.3); /* Border gets brighter */
+}
+
+/* Typography for inside the cards */
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #4da8da; /* A nice subtle blue highlight color, adjust as needed */
+}
+
+.card p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+/* BUTTON */
+
+/* Tech-styled Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(77, 168, 218, 0.15); /* Subtle blue tint */
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid rgba(77, 168, 218, 0.5);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(77, 168, 218, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(77, 168, 218, 0.3);
+}
+
+/* Flexbox for the contact links to sit nicely next to each other */
+.contact-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}

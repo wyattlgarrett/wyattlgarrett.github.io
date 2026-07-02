@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyatt Garrett</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar" id="navbar">
+
+    <div class="logo">
+        Wyatt Garrett
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+        <h1>Wyatt Garrett</h1>
+        <p>Engineering Physics @ UW–Madison</p>
+        <p>Quantum Materials • Experimental Physics • Nanoscale Devices</p>
+    </div>
+
+</section>
+
+<section id="research" class="section">
+    <h2>Research Experience</h2>
+    
+    <div class="card">
+        <h3>2D Quantum Materials Group (Rhodes Lab)</h3>
+        <p><strong>UW-Madison | Undergraduate Researcher</strong></p>
+        <br>
+        <p>Prepared 2M-WS₂ and Td-WTe₂ samples using exfoliation and stacking in a glovebox environment. Conducted low-temperature transport measurements and topological characterizations using dry-transfer methods and wire bonding to low temperature probes.</p>
+    </div>
+
+    <div class="card">
+        <h3>MRSEC REU (Dean Lab)</h3>
+        <p><strong>Columbia University | Research Assistant</strong></p>
+        <br>
+        <p>Conducted research on defect and twist engineering in hexagonal boron nitride to create electrostatic gating architectures. Utilized Conductive AFM techniques to inject free charges into carbon substitution impurities in hBN.</p>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h2>Projects</h2>
+    
+    <div class="card">
+        <h3>SCF Solver for Metallic Ferroelectricity</h3>
+        <p><strong>Computational Physics | Python & SciPy</strong></p>
+        <br>
+        <p>Developed a localized 1D self-consistent field (SCF) solver in Python to simulate the suppression of ferroelectric hysteresis by metallic screening. Implemented a highly optimized tridiagonal eigenvalue solver and Anderson mixing algorithms to solve coupled Schrödinger and Poisson equations.</p>
+        <br>
+        <a href="https://github.com/wyattlgarrett/EP471_Ferroelectric_Metal_Simulation" class="btn" target="_blank">View Source Code on GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>Interactive: Metallic Screening of Ferroelectricity</h3>
+        <p>Drag the slider to increase the charge carrier density ($N_e$) and observe the collapse of the ferroelectric hysteresis loop. Note the collapse of hysteresis when the density is 2, as the electron shell fills.</p>
+        
+        <div style="margin: 20px 0;">
+            <label for="ne-slider" style="font-weight: bold; color: #4da8da;">
+                Charge Carrier Density (N_e): <span id="ne-value">1</span>
+            </label>
+            <br>
+            <input type="range" id="ne-slider" min="1" max="5" value="1" step="1" style="width: 100%; margin-top: 10px;">
+        </div>
+        
+        <div id="hysteresis-plot" style="width: 100%; height: 400px;"></div>
+    </div> <div class="card">
+        <h3>Cherenkov Radiation Luminosity Detector</h3>
+        <p><strong>Instrumentation & Hardware | Arduino & SolidWorks</strong></p>
+        <br>
+        <p>Designed and managed the construction of an airtight, submersible detector to characterize the luminous intensity of a nuclear fission reactor pool. Wrote Arduino scripts to capture and log memory outputs, allowing for precise calculations to estimate the operational efficiency and wattage of the reactor based on theoretical luminosity models.</p>
+    </div>
+
+</section>
+
+<section id="resume" class="section">
+    <h2>Resume</h2>
+    
+    <div class="card">
+        <h3>Curriculum Vitae</h3>
+        <p>View my full academic and professional background, including advanced coursework, fabrication skills, and research history.</p>
+        <br>
+        <a href="assets/Wyatt_Garrett_Resume.pdf" class="btn" target="_blank">Download Resume (PDF)</a>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    
+    <div class="card">
+        <h3>Let's Connect</h3>
+        <p>I am actively seeking PhD opportunities in condensed matter experiment and quantum materials for the Fall 2027 cycle.</p>
+        
+        <div class="contact-links">
+            <a href="mailto:wlgarrett@wisc.edu" class="btn">Email Me</a>
+            <a href="https://linkedin.com/in/WyattGarrett316/" class="btn" target="_blank">LinkedIn</a>
+            <a href="https://github.com/wyattlgarrett" class="btn" target="_blank">GitHub</a>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
