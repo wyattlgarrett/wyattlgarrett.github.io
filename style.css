@@ -223,13 +223,16 @@ width: 100%;
     color: #e0e0e0;
 }
 
-/* Styles for images inside project/research cards */
-.card-img {
+/* --- BULLETPROOF CARD IMAGES --- */
+.card img, .card-img {
     width: 100%;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Soft, rounded corners */
-    margin-bottom: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle glass border */
+    object-fit: cover;
+    border-radius: 8px; /* Smooth corners to match the card theme */
+    margin-top: 15px;   /* Pushes it neatly below the text description */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle glowing border */
+    box-sizing: border-box;
 }
 
 /* BUTTON */
